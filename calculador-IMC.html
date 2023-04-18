@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA PARA CALCULAR TU IMC</h1>
+<script>
+
+ function calcularImc(peso, altura) {
+
+      imc=(peso/(altura*altura))
+      return(Math. round(imc))
+ }
+
+ function imprimir(frase) {
+     document.write(frase)
+     document.write("<br>")
+
+ }
+ var pesoPersona = prompt("ingresar tu peso")
+ var alturaPersona = prompt("ingresar tu altura")
+
+ imprimir(pesoPersona + ", tu imc calculado es " + calcularImc(pesoPersona, alturaPersona) )
+
+ if (calcularImc(pesoPersona, alturaPersona) < 18.5 ) {
+     imprimir("IMC considerado como Insuficiencia ponderal")
+ }
+
+ if (calcularImc(pesoPersona, alturaPersona) >= 18.5 ) {
+          if (calcularImc(pesoPersona, alturaPersona) < 24){
+               imprimir("IMC considerado como Intervalo Normal")
+          }
+ }
+
+ if (calcularImc(pesoPersona, alturaPersona) >= 25 ) {
+     if (calcularImc(pesoPersona, alturaPersona) < 29){
+               imprimir("IMC considerado como Sobrepeso")
+          }
+ }
+
+ if (calcularImc(pesoPersona, alturaPersona) >= 30 ) {
+     document.write("IMC considerado como Preobesidad")
+
+ }
+</script>
